@@ -139,6 +139,7 @@ export function useSession() {
           last_active: now,
           streak_days: 0,
           claimed_milestones: [],
+          total_aura: 0,
         })
         .eq('id', session.id)
     } catch (err) {

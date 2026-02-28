@@ -98,8 +98,11 @@ export const useSessionStore = create<SessionState>((set, get) => ({
           last_active: now,
           streak_days: 0,
           claimed_milestones: [],
+          total_aura: 0,
         },
+        liveAura: 0,
         claimedMilestones: [],
+        auraPopups: [],
       }
     })
   },

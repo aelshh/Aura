@@ -66,16 +66,16 @@ export default function JourneyPage() {
   return (
     <div className="min-h-screen cosmic-bg flex flex-col">
       {/* Header */}
-      <div className="relative z-10 flex items-center gap-3 px-5 pt-12 pb-4">
+      <div className="relative z-10 flex items-center justify-center gap-3 px-5 pt-12 pb-4">
         <button
           onClick={() => navigate('/')}
-          className="p-2 rounded-xl glass-card text-white/60 hover:text-white transition-colors cursor-pointer"
+          className="absolute left-5 p-2 rounded-xl glass-card text-white/60 hover:text-white transition-colors cursor-pointer"
         >
           <ArrowLeft size={20} />
         </button>
-        <div>
-          <h1 className="font-display font-bold text-xl text-white">Level Journey</h1>
-          <p className="text-xs text-white/30">your character arc 🧬</p>
+        <div className="text-center">
+          <h1 className="font-display font-bold text-2xl text-white">Level Journey</h1>
+          <p className="text-sm text-white/50">your character arc 🧬</p>
         </div>
       </div>
 
@@ -190,7 +190,7 @@ export default function JourneyPage() {
                     <div className="absolute top-2 right-2 flex flex-col items-end gap-1">
                       {isCurrent && (
                         <span
-                          className="text-[10px] px-2 py-0.5 rounded-full font-bold backdrop-blur-sm"
+                          className="text-xs px-2 py-0.5 rounded-full font-bold backdrop-blur-sm"
                           style={{
                             background: `${level.glowColor}35`,
                             border: `1px solid ${level.color}60`,
@@ -202,7 +202,7 @@ export default function JourneyPage() {
                       )}
                       {isPast && (
                         <span
-                          className="text-[10px] px-2 py-0.5 rounded-full font-semibold backdrop-blur-sm"
+                          className="text-xs px-2 py-0.5 rounded-full font-semibold backdrop-blur-sm"
                           style={{
                             background: 'rgba(255,255,255,0.08)',
                             border: '1px solid rgba(255,255,255,0.14)',
@@ -214,7 +214,7 @@ export default function JourneyPage() {
                       )}
                       {isLocked && (
                         <span
-                          className="text-[10px] px-2 py-0.5 rounded-full font-semibold backdrop-blur-sm"
+                          className="text-xs px-2 py-0.5 rounded-full font-semibold backdrop-blur-sm"
                           style={{
                             background: 'rgba(0,0,0,0.35)',
                             border: `1px solid ${level.color}25`,
@@ -229,7 +229,7 @@ export default function JourneyPage() {
                     {/* Level number badge */}
                     <div className="absolute top-2 left-2">
                       <span
-                        className="text-[10px] px-2 py-0.5 rounded-full font-mono font-bold backdrop-blur-sm"
+                        className="text-xs px-2 py-0.5 rounded-full font-mono font-bold backdrop-blur-sm"
                         style={{
                           background: 'rgba(0,0,0,0.4)',
                           border: `1px solid ${level.color}30`,
@@ -242,40 +242,40 @@ export default function JourneyPage() {
                   </div>
 
                   {/* Text content */}
-                  <div className="px-4 py-3">
+                  <div className="px-4 py-3 text-center">
                     {/* Name + day requirement */}
-                    <div className="flex items-center justify-between mb-1">
+                    <div className="flex flex-col items-center gap-0.5 mb-2">
                       <h3
-                        className="font-display font-bold text-base leading-tight"
+                        className="font-display font-bold text-lg leading-tight"
                         style={{ color: level.color }}
                       >
                         {level.name}
                       </h3>
                       <span
-                        className="text-[10px] shrink-0 ml-2 font-mono"
-                        style={{ color: 'rgba(255,255,255,0.3)' }}
+                        className="text-sm font-mono"
+                        style={{ color: 'rgba(255,255,255,0.4)' }}
                       >
                         Day {level.minDays}+
                       </span>
                     </div>
 
                     {/* Identity line — always visible */}
-                    <p className="text-xs italic mb-2.5" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                    <p className="text-sm italic mb-3" style={{ color: 'rgba(255,255,255,0.6)' }}>
                       "{level.identity}"
                     </p>
 
                     {/* Brain + performance — always visible */}
-                    <div className="flex flex-col gap-1.5">
-                      <p className="text-[11px] leading-relaxed" style={{ color: 'rgba(255,255,255,0.35)' }}>
-                        <span style={{ color: 'rgba(255,255,255,0.5)' }}>🧠 </span>
+                    <div className="flex flex-col items-center gap-2">
+                      <p className="text-sm leading-relaxed max-w-md" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                        <span style={{ color: 'rgba(255,255,255,0.6)' }}>🧠 </span>
                         {level.brain}
                       </p>
-                      <p className="text-[11px] leading-relaxed" style={{ color: 'rgba(255,255,255,0.35)' }}>
-                        <span style={{ color: 'rgba(255,255,255,0.5)' }}>⚡ </span>
+                      <p className="text-sm leading-relaxed max-w-md" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                        <span style={{ color: 'rgba(255,255,255,0.6)' }}>⚡ </span>
                         {level.performance}
                       </p>
                       <div
-                        className="mt-1 text-[10px] px-2 py-0.5 rounded-full w-fit"
+                        className="mt-1 text-sm px-3 py-1 rounded-full w-fit"
                         style={{
                           background: `${level.glowColor}15`,
                           color: level.color + 'cc',
